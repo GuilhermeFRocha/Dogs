@@ -1,9 +1,9 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { Link } from 'react-router-dom'
 import Input from '../Forms/Input'
 import Button from '../Forms/Button'
 import useForm from '../../Hooks/useForm'
-import {TOKEN_POST, USER_GET} from '../../api'
+import { TOKEN_POST, USER_GET } from '../../api'
 
 const LoginForm = () => {
  
@@ -34,9 +34,8 @@ const LoginForm = () => {
           password: password.value
         })
 
-    fetch(url, options)
     const response = await fetch (url, options)
-    const json =      await response.json()
+    const json = await response.json()
     window.localStorage.setItem('token', json.token)
     getUser(json.token)
    
