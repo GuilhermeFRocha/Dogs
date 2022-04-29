@@ -11,13 +11,13 @@ const UserHeader = () => {
     const { pathname } = location;
     switch (pathname) {
       case "/conta/postar":
-        setTitle("Poste Sua Foto");
+        setTitle("Post your photo");
         break;
       case "/conta/estatisticas":
-        setTitle("Estatisticas");
+        setTitle("Statistics");
         break;
       default:
-        setTitle("Minha Conta");
+        setTitle("My account");
     }
   }, [location]);
 

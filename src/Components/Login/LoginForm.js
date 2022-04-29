@@ -27,16 +27,16 @@ const LoginForm = () => {
     <section className='animeLeft'>
       <h1 className='title'>Login</h1>
       <form className={styles.form} onSubmit={handleSubmit}>
-        <Input label="Usuário" type="text" name="username" {...username} />
-        <Input label="Senha" type="password" name="password" {...password} />
-        {loading ? <Button>carregando</Button> :  <Button>Entrar</Button>}
+        <Input label="User" type="text" name="username" {...username} />
+        <Input label="Password" type="password" name="password" {...password} />
+        {loading ? <Button>Loading...</Button> :  <Button>Log in</Button>}
         <Error error={error}/>
       </form>
-      <Link className={styles.perdeu} to="/login/perdeu">Perdeu a Senha?</Link>
+      <Link className={styles.perdeu} to="/login/perdeu">Lost your password?</Link>
       <div className={styles.cadastro}>
-        <h2 className={styles.subtitle}>Cadastre-se</h2>
-        <p>Ainda nao possui conta? Cadastre-se no site</p>
-        <Link className={stylesBtn.button} to="/login/criar">Cadastro</Link>
+        <h2 className={styles.subtitle}>Register</h2>
+        <p>Don't have an account yet? Register on the website</p>
+        <Link className={stylesBtn.button} to="/login/criar">Register</Link>
 
       </div>
     </section>

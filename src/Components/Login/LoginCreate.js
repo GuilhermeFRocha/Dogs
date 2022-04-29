@@ -31,7 +31,7 @@ const LoginCreate = () => {
     <section className='animeLeft'>
       <h1 className='title'>Cadastre-se</h1>
       <form onSubmit={handleSubmit}>
-        <Input label="Usuario" type="text" name="username" {...username}/>
+        <Input label="User" type="text" name="username" {...username}/>
         <Input label="Email" type="email" name="email" {...email}/>
         <Input label="Senha" type="PASSWORD" name="password" {...password}/>
          {loading ? (<Button disabled>Cadastrando...</Button>) : (<Button>Cadastrar</Button>)}
