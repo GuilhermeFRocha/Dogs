@@ -1,19 +1,20 @@
-import React from "react";
-import FeedPhotosItem from "./FeedPhotosItem";
-import Error from "../Helper/Error";
-import Loading from "../Helper/Loading";
-import useFetch from "../../Hooks/useFetch";
-import { PHOTOS_GET } from "../../Api";
-import styles from "./FeedPhotos.module.css";
+import React from 'react';
+import FeedPhotosItem from './FeedPhotosItem';
+import useFetch from '../../Hooks/useFetch';
+import { PHOTOS_GET } from '../../Api';
+import Error from '../Helper/Error';
+import Loading from '../Helper/Loading';
+import styles from './FeedPhotos.module.css';
 
-const FeedPhotos = ({ user, page, setModalPhoto, setInfinite }) => {
+const FeedPhotos = ({ page, user, setModalPhoto, setInfinite }) => {
   const { data, loading, error, request } = useFetch();
 
   React.useEffect(() => {
     async function fetchPhotos() {
       const total = 3;
       const { url, options } = PHOTOS_GET({ page, total, user });
-      const { response, json } = request(url, options);
+      const { response, json } = await request(url, options);
+      console.log('Request:', json);
       if (response && response.ok && json.length < total) setInfinite(false);
     }
     fetchPhotos();
