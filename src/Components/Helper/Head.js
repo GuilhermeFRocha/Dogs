@@ -8,7 +8,7 @@ const Head = (props) => {
     .setAttribute('content', props.description || '')
   }, [props])
 
-  console.log(props.title);
+
   return (
     <></>
   )
